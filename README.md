@@ -2,23 +2,23 @@
 
 42 Sao Paulo project - Net WHat?
 
-## What I Learned
+## Notes
 
 It's a really good brush up on networking.
 Most of the questions use the IP calculator.
 
 ### TCP
 
-TCP sends information to a siingle known host.
+TCP sends information to a single known host.
 The information's integrity is pretty much guaranteed by extensive error-checking.
 All packets arrive in order, and it's slower than UDP.
-It's used in SMTP, HTTP, FTP and many others.
+It's used by SMTP, HTTP, FTP and many others.
 
 ### UDP
 
-UPD listens and broadcasts data to and from anything else that's listening.
+UPD listens and broadcasts data to and from anything else that's broadcasting and listening.
 The only error-checking it has is a checksum in each package.
-It's used for DHCP (if you don't have an IP you can't use TCP), Voice over IP,
+It's used by DHCP (if you don't have an IP you can't use TCP), Voice over IP,
 DNS, some streaming protocols, and more.
 
 ### DHCP
@@ -28,7 +28,7 @@ Supports IPv4 and IPv6.
 
 ### ping
 
-A common networking tool that checks if a host is online and connected. Uses ICMP.
+A common networking tool that checks if a host is turned on and connected. Uses ICMP.
 
 ### IP classes
 
@@ -41,13 +41,14 @@ The ammount of assignable IPs in a subnet is always `pow(2, ip_bits_available) -
 
 ### Network and Broadcast IPs
 
-Network always ends with a 0.
-The broadcast address is the last adressable IP.
-Any package sent to the broadcast address is received by all hosts in the network.
+The Network IP address always ends with a 0.
+The Broadcast IP address is always the last IP in the subnet.
+Any package sent to the broadcast address relayed to all hosts in the subnet.
 
 ### DNS
 
-It's a program running on a server somewhere that tells you which IP belongs to `google.com`:
+It's a program running on a server somewhere that tells you which IP belongs to `google.com`.
+You can talk to those servers with `nslookup`:
 
 ```bash
 $ nslookup google.com
